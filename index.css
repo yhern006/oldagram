@@ -20,3 +20,21 @@ header {
     border-radius: 50%;
 }
 
+.postDiv {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.wordDiv {
+    margin-left: 10px;
+}
+
+.wordDiv p {
+    margin: 0;
+}
+
+.bold-text {
+    font-weight: 900;
+}
+
