@@ -28,3 +28,9 @@ const posts = [
     }
 ]
 
+const feedPostsEl = document.getElementById("feed-posts")
+console.log(feedPostsEl)
+
+function loadPost() {
+    
+}
