@@ -30,14 +30,17 @@ const posts = [
 ]
 
 const feedPostsEl = document.getElementById("feed-posts")
-console.log(feedPostsEl)
 
-function loadPost() {
-    const currentPoster = posts[0]
+function loadPost(postIndex) {
+    const currentPoster = posts[postIndex]
+
+    let postDiv = document.createElement('div')
+    postDiv.setAttribute('class', 'post-div')
+    feedPostsEl.appendChild(postDiv)
 
     let posterInfo = document.createElement('div')
     posterInfo.setAttribute('class', 'post-header')
-    feedPostsEl.appendChild(posterInfo)
+    postDiv.appendChild(posterInfo)
 
     let posterAvatar = document.createElement('img')
     posterAvatar.src = currentPoster.avatar
@@ -60,11 +63,11 @@ function loadPost() {
     let posterImg = document.createElement('img')
     posterImg.src = currentPoster.post
     posterImg.setAttribute('class', 'post-img')
-    feedPostsEl.appendChild(posterImg)
+    postDiv.appendChild(posterImg)
 
     let postBody = document.createElement('div')
     postBody.setAttribute('class', 'post-body')
-    feedPostsEl.appendChild(postBody)
+    postDiv.appendChild(postBody)
 
     let buttonsDiv = document.createElement('div')
     buttonsDiv.setAttribute('class', 'buttons-div')
@@ -99,4 +102,6 @@ function loadPost() {
     postBody.appendChild(comments)
 }
 
-loadPost()
+for(let i = 0; i < posts.length; i++) {
+    loadPost(i)
+}

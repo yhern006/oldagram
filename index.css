@@ -3,9 +3,11 @@ html, body {
     padding: 0;
     font-family: "Source Sans 3", sans-serif;
     max-width: 375px;
+    background-color: #ededed;
 }
 
 header {
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,8 +15,8 @@ header {
     padding: 16px 8px;
 }
 
-#feed-posts {
-    
+.post-div {
+    margin-bottom: 28px;
 }
 
 .logo {
@@ -27,9 +29,10 @@ header {
 }
 
 .post-header {
+    background-color: white;
     display: flex;
     align-items: center;
-    margin: 10px;
+    padding: 10px;
 }
 
 .wordDiv {
@@ -52,7 +55,8 @@ header {
 }
 
 .post-body {
-    padding: 21px 10px;
+    background-color: white;
+    padding: 21px 10px 6px 10px;
 }
 
 .buttons-div {
@@ -65,5 +69,9 @@ header {
 
 .post-body p {
     margin: 12px 0;
+}
+
+.postDivider {
+    background-color: #ededed;
 }
 
