@@ -1,6 +1,8 @@
 html, body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+    max-width: 375px;
 }
 
 header {
@@ -11,30 +13,57 @@ header {
     padding: 16px 8px;
 }
 
+#feed-posts {
+    
+}
+
 .logo {
-    width: 170px;
+    width: 128px;
 }
 
 .avatar {
-    width: 34px;
+    width: 35px;
     border-radius: 50%;
 }
 
-.postDiv {
+.post-header {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    margin: 10px;
 }
 
 .wordDiv {
-    margin-left: 10px;
+    margin-left: 7px;
+    padding-top: 1px;
 }
 
 .wordDiv p {
     margin: 0;
+    font-size: 12px;
+    line-height: 1.1;
 }
 
 .bold-text {
-    font-weight: 900;
+    font-weight: 700;
+}
+
+.post-img {
+    width: 375px;
+}
+
+.post-body {
+    padding: 21px 10px;
+}
+
+.buttons-div {
+}
+
+.btn-icon {
+    width: 23px;
+    margin-right: 10px;
+}
+
+.post-body p {
+    margin: 12px 0;
 }
 

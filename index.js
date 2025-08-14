@@ -7,7 +7,7 @@ const posts = [
         avatar: "images/avatar-vangogh.jpg",
         post: "images/post-vangogh.jpg",
         comment: "just took a few mushrooms lol",
-        likes: 21
+        likes: 214
     },
     {
         name: "Gustave Courbet",
@@ -36,8 +36,8 @@ function loadPost() {
     const currentPoster = posts[0]
 
     let posterInfo = document.createElement('div')
-    posterInfo.setAttribute('class', 'postDiv')
-    document.body.appendChild(posterInfo)
+    posterInfo.setAttribute('class', 'post-header')
+    feedPostsEl.appendChild(posterInfo)
 
     let posterAvatar = document.createElement('img')
     posterAvatar.src = currentPoster.avatar
@@ -59,7 +59,44 @@ function loadPost() {
 
     let posterImg = document.createElement('img')
     posterImg.src = currentPoster.post
-    posterInfo.appendChild(posterImg)
+    posterImg.setAttribute('class', 'post-img')
+    feedPostsEl.appendChild(posterImg)
+
+    let postBody = document.createElement('div')
+    postBody.setAttribute('class', 'post-body')
+    feedPostsEl.appendChild(postBody)
+
+    let buttonsDiv = document.createElement('div')
+    buttonsDiv.setAttribute('class', 'buttons-div')
+    postBody.appendChild(buttonsDiv)
+
+    let heatBtn = document.createElement('img')
+    heatBtn.src = 'images/icon-heart.png'
+    heatBtn.setAttribute('class', 'btn-icon')
+    buttonsDiv.appendChild(heatBtn)
+
+    let commentBtn = document.createElement('img')
+    commentBtn.src = 'images/icon-comment.png'
+    commentBtn.setAttribute('class', 'btn-icon')
+    buttonsDiv.appendChild(commentBtn)
+
+    let dmBtn = document.createElement('img')
+    dmBtn.src = 'images/icon-dm.png'
+    dmBtn.setAttribute('class', 'btn-icon')
+    buttonsDiv.appendChild(dmBtn)
+
+    let postStats = document.createElement('p')
+    postStats.innerHTML = `<span class='bold-text'>
+                            ${currentPoster.likes} likes
+                            </span>`
+    postBody.appendChild(postStats)
+
+    let comments = document.createElement('p')
+    comments.innerHTML = `<span class='bold-text'>
+                            ${currentPoster.username}
+                            </span> 
+                            ${currentPoster.comment}`
+    postBody.appendChild(comments)
 }
 
 loadPost()
