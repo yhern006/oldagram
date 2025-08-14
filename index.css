@@ -67,6 +67,10 @@ header {
     margin-right: 10px;
 }
 
+.btn-icon:hover, .btn-icon:focus {
+    opacity: 0.5;
+}
+
 .post-body p {
     margin: 12px 0;
 }
