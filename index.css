@@ -64,12 +64,25 @@ header {
 
 .btn-icon {
     width: 23px;
+    height: 23px;
     margin-right: 10px;
 }
 
-.btn-icon:hover, .btn-icon:focus {
+.heart-icon {
+    display: inline-block;
+    background-image: url(images/icon-heart.png);
+    background-size: cover;
+}
+
+.heart-icon:hover {
+    background-image: url(images/icon-heart-filled.png);
+}
+
+.icon:hover, .btn-icon:focus {
     opacity: 0.5;
 }
+
+
 
 .post-body p {
     margin: 12px 0;

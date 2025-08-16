@@ -73,19 +73,18 @@ function loadPost(postIndex) {
     buttonsDiv.setAttribute('class', 'buttons-div')
     postBody.appendChild(buttonsDiv)
 
-    let heatBtn = document.createElement('img')
-    heatBtn.src = 'images/icon-heart.png'
-    heatBtn.setAttribute('class', 'btn-icon')
+    let heatBtn = document.createElement('div')
+    heatBtn.setAttribute('class', 'heart-icon btn-icon')
     buttonsDiv.appendChild(heatBtn)
 
     let commentBtn = document.createElement('img')
     commentBtn.src = 'images/icon-comment.png'
-    commentBtn.setAttribute('class', 'btn-icon')
+    commentBtn.setAttribute('class', 'btn-icon icon')
     buttonsDiv.appendChild(commentBtn)
 
     let dmBtn = document.createElement('img')
     dmBtn.src = 'images/icon-dm.png'
-    dmBtn.setAttribute('class', 'btn-icon')
+    dmBtn.setAttribute('class', 'btn-icon icon')
     buttonsDiv.appendChild(dmBtn)
 
     let postStats = document.createElement('p')
