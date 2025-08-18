@@ -33,72 +33,34 @@ const feedPostsEl = document.getElementById("feed-posts")
 
 function loadPost(postIndex) {
     const currentPoster = posts[postIndex]
+    let html_string = ""
 
-    let postDiv = document.createElement('div')
-    postDiv.setAttribute('class', 'post-div')
-    feedPostsEl.appendChild(postDiv)
+    html_string = `<div class='post-div'>
+                        <div class='post-header'>
+                            <img src=${currentPoster.avatar} class='avatar'>
+                            <div class='wordDiv'>
+                                <p class='bold-text'>${currentPoster.name}</p>
+                                <p>${currentPoster.location}</p>
+                            </div>
+                        </div>
+                    `
 
-    let posterInfo = document.createElement('div')
-    posterInfo.setAttribute('class', 'post-header')
-    postDiv.appendChild(posterInfo)
-
-    let posterAvatar = document.createElement('img')
-    posterAvatar.src = currentPoster.avatar
-    posterAvatar.setAttribute('class', 'avatar')
-    posterInfo.appendChild(posterAvatar)
-
-    let wordDiv = document.createElement('div')
-    wordDiv.setAttribute('class', 'wordDiv')
-    posterInfo.appendChild(wordDiv)
-
-    let posterName = document.createElement('p')
-    posterName.textContent = currentPoster.name
-    posterName.setAttribute('class', 'bold-text')
-    wordDiv.appendChild(posterName)
-
-    let posterLocation = document.createElement('p')
-    posterLocation.textContent = currentPoster.location
-    wordDiv.appendChild(posterLocation)
-
-    let posterImg = document.createElement('img')
-    posterImg.src = currentPoster.post
-    posterImg.setAttribute('class', 'post-img')
-    postDiv.appendChild(posterImg)
-
-    let postBody = document.createElement('div')
-    postBody.setAttribute('class', 'post-body')
-    postDiv.appendChild(postBody)
-
-    let buttonsDiv = document.createElement('div')
-    buttonsDiv.setAttribute('class', 'buttons-div')
-    postBody.appendChild(buttonsDiv)
-
-    let heatBtn = document.createElement('div')
-    heatBtn.setAttribute('class', 'heart-icon btn-icon')
-    buttonsDiv.appendChild(heatBtn)
-
-    let commentBtn = document.createElement('img')
-    commentBtn.src = 'images/icon-comment.png'
-    commentBtn.setAttribute('class', 'btn-icon icon')
-    buttonsDiv.appendChild(commentBtn)
-
-    let dmBtn = document.createElement('img')
-    dmBtn.src = 'images/icon-dm.png'
-    dmBtn.setAttribute('class', 'btn-icon icon')
-    buttonsDiv.appendChild(dmBtn)
-
-    let postStats = document.createElement('p')
-    postStats.innerHTML = `<span class='bold-text'>
+    html_string += `<div class='post-body'>
+                        <div class='buttons-div'>
+                            <div class='heart-icon btn-icon'></div>
+                            <img src='images/icon-comment.png' class='btn-icon icon'>
+                            <img src='images/icon-dm.png' class='btn-icon icon'>
+                        </div>
+                        <p><span class='bold-text'>
                             ${currentPoster.likes} likes
-                            </span>`
-    postBody.appendChild(postStats)
+                        </span></p>
+                        <p><span class='bold-text'>${currentPoster.username}</span> 
+                            ${currentPoster.comment}
+                        </p>
+                    </div>
+                </div>`
 
-    let comments = document.createElement('p')
-    comments.innerHTML = `<span class='bold-text'>
-                            ${currentPoster.username}
-                            </span> 
-                            ${currentPoster.comment}`
-    postBody.appendChild(comments)
+    feedPostsEl.innerHTML += html_string
 }
 
 for(let i = 0; i < posts.length; i++) {
