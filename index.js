@@ -43,22 +43,23 @@ function loadPost(postIndex) {
                                 <p>${currentPoster.location}</p>
                             </div>
                         </div>
-                    `
 
-    html_string += `<div class='post-body'>
-                        <div class='buttons-div'>
-                            <div class='heart-icon btn-icon'></div>
-                            <img src='images/icon-comment.png' class='btn-icon icon'>
-                            <img src='images/icon-dm.png' class='btn-icon icon'>
+                        <img class='post-img' src=${currentPoster.post}>
+                    
+                        <div class='post-body'>
+                            <div class='buttons-div'>
+                                <div class='heart-icon btn-icon'></div>
+                                <img src='images/icon-comment.png' class='btn-icon icon'>
+                                <img src='images/icon-dm.png' class='btn-icon icon'>
+                            </div>
+                            <p><span class='bold-text'>
+                                ${currentPoster.likes} likes
+                            </span></p>
+                            <p><span class='bold-text'>${currentPoster.username}</span> 
+                                ${currentPoster.comment}
+                            </p>
                         </div>
-                        <p><span class='bold-text'>
-                            ${currentPoster.likes} likes
-                        </span></p>
-                        <p><span class='bold-text'>${currentPoster.username}</span> 
-                            ${currentPoster.comment}
-                        </p>
-                    </div>
-                </div>`
+                    </div>`
 
     feedPostsEl.innerHTML += html_string
 }
